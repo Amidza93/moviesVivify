@@ -23,7 +23,7 @@ const cropWidth = rating => {
   return Math.floor((rating * width) / 5);
 };
 
-const StarRating = ({ rating }) => {
+const StarRating = ({ rating, rateMovie }) => {
   const containerStyle = { width: `${cropWidth(rating)}px` };
 
   return (
@@ -31,11 +31,11 @@ const StarRating = ({ rating }) => {
       <div style={styles.starsOuter}>
         <div style={containerStyle}>
           <div style={styles.starsEmptyInner}>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
-            <i className="fa fa-star-o fa-lg" style={styles.star}></i>
+            <i onClick={() => { rateMovie(1) }} className="fa fa-star-o fa-lg" style={styles.star}></i>
+            <i onClick={() => { rateMovie(2) }} className="fa fa-star-o fa-lg" style={styles.star}></i>
+            <i onClick={() => { rateMovie(3) }} className="fa fa-star-o fa-lg" style={styles.star}></i>
+            <i onClick={() => { rateMovie(4) }} className="fa fa-star-o fa-lg" style={styles.star}></i>
+            <i onClick={() => { rateMovie(5) }} className="fa fa-star-o fa-lg" style={styles.star}></i>
           </div>
           <div style={styles.starsInner}>
             <i className="fa fa-star fa-lg" style={styles.star}></i>
@@ -46,7 +46,7 @@ const StarRating = ({ rating }) => {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
